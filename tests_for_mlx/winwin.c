@@ -1,4 +1,4 @@
-#include "minilibx_opengl_20191021/mlx.h"
+#include "../mlx/mlx.h"
 #include <stdlib.h>
 
 int main(void)
@@ -32,13 +32,13 @@ int main(void)
     // [Add your code to work with the image here]
 
     // Destroy the image after use
-    mlx_destroy_image(mlx_ptr, img_ptr);
+    //mlx_destroy_image(mlx_ptr, img_ptr);
 
     // Destroy the window
-    mlx_destroy_window(mlx_ptr, win_ptr);
+    //mlx_destroy_window(mlx_ptr, win_ptr);
 
     // Free the MiniLibX instance (optional on macOS)
-    free(mlx_ptr);
+    //free(mlx_ptr);
 
     return (0);
 }

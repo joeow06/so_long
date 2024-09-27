@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jow <jow@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 23:29:09 by jow               #+#    #+#             */
-/*   Updated: 2024/09/25 23:30:59 by jow              ###   ########.fr       */
+/*   Created: 2024/09/27 16:33:06 by jow               #+#    #+#             */
+/*   Updated: 2024/09/27 16:34:32 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "minilibx_opengl_20191021/mlx.h"
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
-int main(void)
-{
-	printf("Hello\n");
-	return (0);
-}
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+
+#endif
