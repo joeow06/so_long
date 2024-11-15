@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   close_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 22:42:48 by jow               #+#    #+#             */
-/*   Updated: 2024/11/16 02:27:27 by joeow            ###   ########.fr       */
+/*   Created: 2024/11/16 02:26:29 by joeow             #+#    #+#             */
+/*   Updated: 2024/11/16 02:35:02 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-void	ft_exit_free(t_map *map)
+void	ft_won(t_map *map)
 {
 	int	i;
 
 	i = 0;
+	map->exit = 1;
+	map->moves++;
 	if (map->array)
 	{
 		while (map->array[i])
@@ -26,23 +28,16 @@ void	ft_exit_free(t_map *map)
 		}
 		free(map->array);
 	}
-	if (map->copy)
-	{
-		i = 0;
-		while (map->copy[i])
-		{
-			free(map->copy[i]);
-			i++;
-		}
-		free(map->copy);
-	}
-	exit(EXIT_FAILURE);
+	exit(EXIT_SUCCESS);
 }
 
-int	ft_free_array(char **a, int i)
+int	close_game(t_map *map)
 {
-	while (i > 0)
-		free(a[--i]);
-	free(a);
+	mlx_destroy_image(map->mlx_ptr, map->img.wall);
+	mlx_destroy_image(map->mlx_ptr, map->img.player);
+	mlx_destroy_window(map->mlx_ptr, map->win_ptr);
+	mlx_destroy_display(map->mlx_ptr);
+	free(map->mlx_ptr);
+	exit(0);
 	return (0);
 }

@@ -6,22 +6,11 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 18:03:09 by jow               #+#    #+#             */
-/*   Updated: 2024/11/16 02:15:31 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/16 02:37:31 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
-
-int close_game(t_map *map)
-{
-	mlx_destroy_image(map->mlx_ptr, map->img.wall);
-	mlx_destroy_image(map->mlx_ptr, map->img.player);
-	mlx_destroy_window(map->mlx_ptr, map->win_ptr);
-	mlx_destroy_display(map->mlx_ptr);
-	free(map->mlx_ptr);
-	exit(0);
-	return (0);
-}
 
 int on_keypress(int keysym, t_map *map)
 {
@@ -86,6 +75,7 @@ int main(int argc, char **argv)
 				* IMG_PXL, map.y * IMG_PXL, WND_NAME);
 		convert_image(&map);
 		map_printer(&map);
+		mlx_hook(map.win_ptr, 17, 0, close_game, &map);
 		mlx_key_hook(map.win_ptr, on_keypress, &map);
 		mlx_loop(map.mlx_ptr);
 	}

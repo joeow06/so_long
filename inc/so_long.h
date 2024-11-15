@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:33:06 by jow               #+#    #+#             */
-/*   Updated: 2024/11/16 02:11:05 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/16 02:33:52 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void	check_valid_path(t_map *map);
 void	scan_player(t_map *map);
 void	move_on_paths(int x, int y, t_map *map);
 int		ft_free_array(char **a, int i);
+int		close_game(t_map *map);
 void	convert_image(t_map *map);
 void	map_printer(t_map *map);
 void	print_movements(t_map *map);
