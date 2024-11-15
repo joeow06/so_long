@@ -6,10 +6,10 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 11:51:13 by jow               #+#    #+#             */
-/*   Updated: 2024/07/04 14:05:55 by joeow            ###   ########.fr       */
+/*   Updated: 2024/10/16 16:06:35 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "../../inc/get_next_line.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
