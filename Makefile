@@ -13,7 +13,7 @@ OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
-# Detect platform and set flags dynamically
+# Detect OS
 ifeq ($(shell uname), Linux)
 	INCLUDES = -I/usr/include -Imlx
 	MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
