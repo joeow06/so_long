@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 17:57:46 by jow               #+#    #+#             */
-/*   Updated: 2024/11/16 15:40:13 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/17 15:46:35 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	set_counters(t_map *map)
 	map->x = i;
 }
 
-int	map_to_array(t_map *map)
+void	map_to_array(t_map *map)
 {
 	int		n;
 	int		fd;
@@ -48,8 +48,13 @@ int	map_to_array(t_map *map)
 		free(temp_map);
 		ft_exit_free(map);
 	}
+	if (map->array[0] == NULL)
+		error_map_exit(3);
 	free(temp_map);
 	set_counters(map);
 	close(fd);
-	return (0);
 }
+/*
+line 51: to check if file only
+contains newline
+*/

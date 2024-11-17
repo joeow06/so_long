@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 15:34:31 by jow               #+#    #+#             */
-/*   Updated: 2024/11/13 15:15:51 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/17 15:47:25 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	checker_params(t_map *map)
 		}
 		y++;
 	}
-	if (map->c < 1 || map->e < 1 || map->p != 1)
+	if (map->c < 1 || map->e != 1 || map->p != 1)
 		error_map_elements(map);
 }
 

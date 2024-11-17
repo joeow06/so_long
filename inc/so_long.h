@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:33:06 by jow               #+#    #+#             */
-/*   Updated: 2024/11/16 15:36:26 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/17 15:52:26 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ typedef struct s_map
 }	t_map;
 
 void	map_checker(t_map *map);
-int		map_to_array(t_map *map);
+void	map_to_array(t_map *map);
 void	error_map_exit(int i);
 void	error_map_size(t_map *map);
 void	error_map_elements(t_map *map);
