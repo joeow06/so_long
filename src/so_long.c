@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 18:03:09 by jow               #+#    #+#             */
-/*   Updated: 2024/11/16 15:39:04 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/17 16:11:39 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		write(2, "Error: Wrong Arguments\n", 24);
+		write(1, "Error\nWrong Arguments\n", 23);
 		return (1);
 	}
 }

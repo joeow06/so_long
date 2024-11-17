@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:34:26 by joeow             #+#    #+#             */
-/*   Updated: 2024/11/17 14:27:50 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/17 20:06:19 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	on_keypress(int keysym, t_map *map)
 	scan_player(map);
 	if (keysym == XK_Escape)
 	{
-		ft_printf("Escape key pressed. Exiting...\n");
 		close_game(map);
 	}
 	else if (keysym == XK_w)
