@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 15:53:30 by jow               #+#    #+#             */
-/*   Updated: 2024/11/17 16:07:30 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/17 22:38:43 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	error_map_exit(int i)
 	else if (i == 2)
 		write(1, "Error\nFile does not exist\n", 26);
 	else if (i == 3)
-		write(1, "Error\nMap is Empty\n", 25);
+		write(1, "Error\nMap is Empty\n", 20);
 	exit(EXIT_FAILURE);
 }
 
