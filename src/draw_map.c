@@ -6,11 +6,28 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:29:51 by joeow             #+#    #+#             */
-/*   Updated: 2024/11/16 02:00:10 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/16 16:17:17 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
+
+void	convert_image(t_map *map)
+{
+	int	a;
+
+	a = IMG_PXL;
+	map->img.wall = mlx_xpm_file_to_image(map->mlx_ptr, "pictures/wall.xpm",
+			&a, &a);
+	map->img.player = mlx_xpm_file_to_image(map->mlx_ptr,
+			"pictures/player.xpm", &a, &a);
+	map->img.collectible = mlx_xpm_file_to_image(map->mlx_ptr,
+			"pictures/collectible.xpm", &a, &a);
+	map->img.floor = mlx_xpm_file_to_image(map->mlx_ptr, "pictures/floor.xpm",
+			&a, &a);
+	map->img.exit = mlx_xpm_file_to_image(map->mlx_ptr, "pictures/exit.xpm",
+			&a, &a);
+}
 
 static void	map_type(t_map *map, int x, int y)
 {
@@ -34,7 +51,7 @@ static void	map_type(t_map *map, int x, int y)
 			map->img.wall, x, y);
 }
 
-void	map_printer(t_map *map)
+void	draw_map(t_map *map)
 {
 	int	x;
 	int	y;

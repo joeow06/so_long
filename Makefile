@@ -5,7 +5,8 @@ SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = inc
 
-SRC = so_long.c error_handle.c map_checker.c to_array_map.c check_valid_path.c free.c set_images.c draw_map.c moves.c close_game.c
+SRC = so_long.c error_handle.c map_checker.c to_array_map.c check_valid_path.c free.c draw_map.c \
+		hooks.c moves.c close_game.c
 INC = so_long.h
 #OBJ = $(OBJ_DIR)/$(SRC:.c=.o)
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)

@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 02:26:29 by joeow             #+#    #+#             */
-/*   Updated: 2024/11/16 02:35:02 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/16 15:32:49 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_won(t_map *map)
 	i = 0;
 	map->exit = 1;
 	map->moves++;
+	print_movements(map);
+	ft_printf("\nYou won!\n");
 	if (map->array)
 	{
 		while (map->array[i])

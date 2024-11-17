@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 17:57:46 by jow               #+#    #+#             */
-/*   Updated: 2024/11/13 15:22:34 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/16 15:40:13 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	map_to_array(t_map *map)
 	int		n;
 	int		fd;
 	char	*temp_map;
-
 
 	temp_map = ft_calloc(BUFF_SIZE + 1, sizeof(char));
 	if (!temp_map)
