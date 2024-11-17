@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 16:29:51 by joeow             #+#    #+#             */
-/*   Updated: 2024/11/16 16:17:17 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/17 22:35:39 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,15 @@ static void	map_type(t_map *map, int x, int y)
 	else if (type == '1')
 		mlx_put_image_to_window(map->mlx_ptr, map->win_ptr,
 			map->img.wall, x, y);
+}
+
+int	draw_map_wrapper(void *param)
+{
+	t_map	*map;
+
+	map = (t_map *)param;
+	draw_map(map);
+	return (0);
 }
 
 void	draw_map(t_map *map)

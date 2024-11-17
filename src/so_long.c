@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 18:03:09 by jow               #+#    #+#             */
-/*   Updated: 2024/11/17 16:11:39 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/17 22:32:02 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	main(int argc, char **argv)
 		draw_map(&map);
 		mlx_hook(map.win_ptr, 17, 0, close_game, &map);
 		mlx_hook(map.win_ptr, KeyPress, KeyPressMask, &on_keypress, &map);
+		mlx_hook(map.win_ptr, Expose, ExposureMask, &draw_map_wrapper, &map);
 		mlx_loop(map.mlx_ptr);
 	}
 	else

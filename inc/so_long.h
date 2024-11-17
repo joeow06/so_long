@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:33:06 by jow               #+#    #+#             */
-/*   Updated: 2024/11/17 15:52:26 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/17 22:31:34 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int		ft_free_array(char **a, int i);
 int		close_game(t_map *map);
 void	convert_image(t_map *map);
 void	draw_map(t_map *map);
+int		draw_map_wrapper(void *param);
 void	print_movements(t_map *map);
 void	move_up(t_map *map);
 void	move_left(t_map *map);
