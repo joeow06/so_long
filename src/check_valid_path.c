@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:39:56 by joeow             #+#    #+#             */
-/*   Updated: 2024/11/16 15:39:59 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/17 14:25:21 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,4 @@ void	check_valid_path(t_map *map)
 		ft_exit_free(map);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", map->player.x);
-	printf("%d\n", map->player.y);
 }

@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:34:26 by joeow             #+#    #+#             */
-/*   Updated: 2024/11/17 14:23:33 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/17 14:27:50 by joeow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,5 @@ int	on_keypress(int keysym, t_map *map)
 	{
 		move_down(map);
 	}
-	printf("x: %d\n", map->player.x);
-	printf("y: %d\n", map->player.y);
 	return (0);
 }

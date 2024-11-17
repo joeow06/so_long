@@ -8,30 +8,39 @@ INC_DIR = inc
 SRC = so_long.c error_handle.c map_checker.c to_array_map.c check_valid_path.c free.c draw_map.c \
 		hooks.c moves.c close_game.c
 INC = so_long.h
-#OBJ = $(OBJ_DIR)/$(SRC:.c=.o)
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
-
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-MLX_FLAGS = -I$(INC_DIR) -I/opt/X11/include -Imlx -Lmlx -lmlx \
-            -L/usr/X11/lib -lXext -lX11 -framework OpenGL -framework AppKit
+
+# Detect platform and set flags dynamically
+ifeq ($(shell uname), Linux)
+	INCLUDES = -I/usr/include -Imlx
+	MLX_FLAGS = -Lmlx -lmlx -L/usr/lib/X11 -lXext -lX11
+else
+	INCLUDES = -I/opt/X11/include -Imlx
+	MLX_FLAGS = -Lmlx -lmlx -L/usr/X11/lib -lXext -lX11 -framework OpenGL -framework AppKit
+endif
+
+MLX_DIR = ./mlx
+MLX_LIB = $(MLX_DIR)/libmlx_$(shell uname).a
+
 RM = rm -rf
 
 # Rule to create the final executable
-all: $(NAME)
+all: $(MLX_LIB) $(NAME)
 
 # Linking the final executable
 $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJ) $(MLX_FLAGS) $(LIBFT) -o $(NAME)
 
-# Create .o from .c file, "|" separates normal dependencies from order-only
-# prerequisites. In this case, $(OBJ_DIR) is an order-only prerequisite,
-# meaning that Make ensures the object directory is created, but it doesn't
-# affect the actual dependency check for the .c files
-
+# Rule to compile .o files from .c files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -I$(INC_DIR) -I/opt/X11/include -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+# Build MLX library
+$(MLX_LIB):
+	@make -C $(MLX_DIR)
 
 # Build libft
 $(LIBFT):
@@ -44,6 +53,7 @@ $(OBJ_DIR):
 clean:
 	$(RM) $(OBJ_DIR)
 	$(MAKE) -C ./libft clean
+	$(MAKE) -C $(MLX_DIR) clean
 
 fclean: clean
 	$(RM) $(NAME)
@@ -52,4 +62,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
