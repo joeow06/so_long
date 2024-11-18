@@ -6,7 +6,7 @@
 /*   By: joeow <joeow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:33:06 by jow               #+#    #+#             */
-/*   Updated: 2024/11/17 22:31:34 by joeow            ###   ########.fr       */
+/*   Updated: 2024/11/18 10:34:19 by jow              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@
 # define BUFF_SIZE 10000
 # define IMG_PXL 50
 # define WND_NAME "so_long"
-# define UP      XK_w
-# define DOWN    XK_s
-# define LEFT    XK_a
-# define RIGHT   XK_d
+# define UP 13
+# define DOWN 1
+# define LEFT 0
+# define RIGHT 2
 
 typedef struct s_img
 {
