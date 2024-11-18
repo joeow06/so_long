@@ -17,15 +17,15 @@ void	convert_image(t_map *map)
 	int	a;
 
 	a = IMG_PXL;
-	map->img.wall = mlx_xpm_file_to_image(map->mlx_ptr, "pictures/wall.xpm",
+	map->img.wall = mlx_xpm_file_to_image(map->mlx_ptr, "textures/wall.xpm",
 			&a, &a);
 	map->img.player = mlx_xpm_file_to_image(map->mlx_ptr,
-			"pictures/player.xpm", &a, &a);
+			"textures/player.xpm", &a, &a);
 	map->img.collectible = mlx_xpm_file_to_image(map->mlx_ptr,
-			"pictures/collectible.xpm", &a, &a);
-	map->img.floor = mlx_xpm_file_to_image(map->mlx_ptr, "pictures/floor.xpm",
+			"textures/collectible.xpm", &a, &a);
+	map->img.floor = mlx_xpm_file_to_image(map->mlx_ptr, "textures/floor.xpm",
 			&a, &a);
-	map->img.exit = mlx_xpm_file_to_image(map->mlx_ptr, "pictures/exit.xpm",
+	map->img.exit = mlx_xpm_file_to_image(map->mlx_ptr, "textures/exit.xpm",
 			&a, &a);
 }
 
